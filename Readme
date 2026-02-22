@@ -5,7 +5,7 @@
     CRUD operations
     Error handling
     Security
-2. db name : giang110802006_db_user , mk: TV9bN32iSydU7VKI
+
 
 + dùng bcrypt để hash  password khi đăng kí, bcrypt.compare để so sánh password khi đăng nhập (nhưng khi đó sao lấy được cái hash password khi đăng kí trong db? )
 + find = tìm NHIỀU document + Trả về MẢNG (array), findOne() = tìm 1 document + trả về object( findOne là câu trả lời cho câu hỏi trên)
@@ -17,3 +17,16 @@ Server xác thực JWT →
 Biết client là ai
 + jwt.sign() mã hóa thành chuỗi string là token
 + jwt.verify() , giải mã token thành object ( muốn lấy token thì req.headers.authorization)
+
+3. controller cung la 1 middleware, mà middleware dùng trong phần route TodoRoute.put("/:idTodo",authMiddleware,updateTodo_con);
+khi đó có thể cho cả error middleware vô nhưng cho luôn cuối serve
+
+4. Refresh Token (CHUẨN BẢO MẬT THỰC TẾ)
+Vấn đề
+Access token hết hạn → user bị logout.
+Giải pháp
+Access token: sống ngắn (15m)
+Refresh token: sống dài (7d)
+
+5. Validation với joi (là 1 middle dùng trước controller)
+joi giúp điểm tra tính hợp lệ của dữ liệu khi người dùng đưa vaof
