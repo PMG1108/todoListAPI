@@ -6,16 +6,19 @@ const TodoRoute = require("./src/Routes/todo.route")
 
 require("dotenv").config({ quiet: true })
 
-const port = 1108;
+const PORT = process.env.PORT || 5000
+
 app.use(express.json())
 
 app.use("/auth", AuthRoute);
 app.use("/todo", TodoRoute);
-
+app.get("/", (req, res) => {
+  res.send("Todo API is running");
+});
     (async () => {
         await connectionDB();
-        app.listen(port, () => {
-            console.log("Serve is running in port: ", port)
+        app.listen(PORT, () => {
+            console.log("Serve is running in PORT: ", PORT)
         })
     })();
 
