@@ -13,7 +13,7 @@ app.use(express.json())
 app.use("/auth", AuthRoute);
 app.use("/todo", TodoRoute);
 app.get("/", (req, res) => {
-  res.send("Todo API is running");
+  res.send("Todo API is runninggggggggg");
 });
     (async () => {
         await connectionDB();
