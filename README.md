@@ -1,6 +1,6 @@
 # Todo Backend Project
 
-##  Live API
+##  Project URL
 https://todolistapi-qhep.onrender.com
 
 ## 📖Description
